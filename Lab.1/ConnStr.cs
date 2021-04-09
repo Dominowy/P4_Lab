@@ -8,7 +8,7 @@ namespace Lab._1
     {
         public static string conn()
         {
-            var connect = @"Data Source = localhost; Initial Catalog = NORTHWND; User ID = SA; Password = **********";
+            var connect = @"Data Source = SERVER ADDRESS; Initial Catalog = ZNorthwind; User ID = SA; Password = *******";
             return connect;
         }
     }

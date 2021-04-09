@@ -8,7 +8,7 @@ namespace Lab._1
     {
         public static void Show(SqlConnection connection)
         {
-            var dbSelect = $"SELECT * FROM dbo.Customers";
+            var dbSelect = $"SELECT * FROM dbo.Klienci";
             var query = new SqlCommand(dbSelect, connection);
             var inReturn = query.ExecuteReader();
             
@@ -21,33 +21,37 @@ namespace Lab._1
 
         public static void Insert(SqlConnection connection)
         {
-            string customerId = "DOMI";
-            string companyName = "Domino";
+            var customerId = 10;
+            string secondName = "katana";
+            string name = "dominik";
             
-            var dbInsert = $"INSERT INTO dbo.Customers (CustomerID, CompanyName) VALUES (@ID, @CompanyName)";
+            var dbInsert = $"INSERT INTO dbo.Pracownicy (IDpracownika, Nazwisko, Imię) VALUES (@Id, @SecondName, @Name)";
             var query = new SqlCommand(dbInsert, connection);
-            query.Parameters.Add(new SqlParameter("@ID", customerId));
-            query.Parameters.Add(new SqlParameter("@CompanyName", companyName));
+            query.Parameters.Add(new SqlParameter("@Id", customerId));
+            query.Parameters.Add(new SqlParameter("@SecondName", secondName));
+            query.Parameters.Add(new SqlParameter("@Name", name));
             query.ExecuteNonQuery();
         }
         
         public static void Update(SqlConnection connection)
         {
-            string customerId = "DOMI";
-            string companyName = "Domino2";
+            var customerId = 10;
+            string secondName = "Katana";
+            string name = "Dominik";
             
-            var dbUpdate = $"UPDATE dbo.Customers SET CompanyName = @CompanyName WHERE CustomerID = @ID";
+            var dbUpdate = $"UPDATE dbo.Pracownicy SET Nazwisko = @CompanyName, Imię = @Imie WHERE IDpracownika = @Id";
             var query = new SqlCommand(dbUpdate, connection);
-            query.Parameters.Add(new SqlParameter("@CompanyName", companyName));
-            query.Parameters.Add(new SqlParameter("@ID", "DOMI"));
+            query.Parameters.Add(new SqlParameter("@CompanyName", secondName));
+            query.Parameters.Add(new SqlParameter("@Id", customerId));
+            query.Parameters.Add(new SqlParameter("@Imie", name));
             query.ExecuteNonQuery();
         }
 
         public static void Drop(SqlConnection connection)
         {
-            string customerId = "DOMI";
+            var customerId = 10;
             
-            var dbDrop = $"DELETE FROM dbo.Customers WHERE CustomerID = @ID";
+            var dbDrop = $"DELETE FROM dbo.Pracownicy WHERE IDpracownika = @ID";
             var query = new SqlCommand(dbDrop, connection);
             query.Parameters.Add(new SqlParameter("@ID", customerId));
             query.ExecuteNonQuery();
