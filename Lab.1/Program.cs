@@ -11,7 +11,7 @@ namespace Lab._1
             using SqlConnection connection = new SqlConnection(ConnStr.conn());
             
             connection.Open();
-
+            
             Polecenia.Drop(connection);
 
             connection.Close();
