@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace Lab._1
 {
@@ -6,7 +8,14 @@ namespace Lab._1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using SqlConnection connection = new SqlConnection(ConnStr.conn());
+            
+            connection.Open();
+
+            Polecenia.Drop(connection);
+
+            connection.Close();
+
         }
     }
 }
