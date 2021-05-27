@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using Lab._3.ScaffoldModel;
+using System.Collections.Generic;
 
 namespace Lab._3
 {
@@ -6,7 +9,11 @@ namespace Lab._3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using var db = new NORTHWNDContext();
+
+            db.Add(new MyUser() { });
+
+            db.SaveChanges();
         }
     }
 }
