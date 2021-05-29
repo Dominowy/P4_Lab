@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5436BB2F-B8CB-41F5-BC21-131F8ACFB562}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lab._4</RootNamespace>
+    <AssemblyName>Lab._4</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>packages\System.Data.SqlClient.4.8.2\lib\net461\System.Data.SqlClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Computer.cs" />
+    <Compile Include="ContextEF6.cs" />
+    <Compile Include="Klient.cs" />
+    <Compile Include="Laptop.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NORTHWND\Alphabetical_list_of_product.cs" />
+    <Compile Include="NORTHWND\Category.cs" />
+    <Compile Include="NORTHWND\Category_Sales_for_1997.cs" />
+    <Compile Include="NORTHWND\Current_Product_List.cs" />
+    <Compile Include="NORTHWND\Customer.cs" />
+    <Compile Include="NORTHWND\CustomerDemographic.cs" />
+    <Compile Include="NORTHWND\Customer_and_Suppliers_by_City.cs" />
+    <Compile Include="NORTHWND\C__EFMigrationsHistory.cs" />
+    <Compile Include="NORTHWND\Employee.cs" />
+    <Compile Include="NORTHWND\Invoice.cs" />
+    <Compile Include="NORTHWND\ModelNORTHWND.cs" />
+    <Compile Include="NORTHWND\MyUser.cs" />
+    <Compile Include="NORTHWND\Order.cs" />
+    <Compile Include="NORTHWND\Orders_Qry.cs" />
+    <Compile Include="NORTHWND\Order_Detail.cs" />
+    <Compile Include="NORTHWND\Order_Details_Extended.cs" />
+    <Compile Include="NORTHWND\Order_Subtotal.cs" />
+    <Compile Include="NORTHWND\Product.cs" />
+    <Compile Include="NORTHWND\Products_Above_Average_Price.cs" />
+    <Compile Include="NORTHWND\Products_by_Category.cs" />
+    <Compile Include="NORTHWND\Product_Sales_for_1997.cs" />
+    <Compile Include="NORTHWND\Region.cs" />
+    <Compile Include="NORTHWND\Sales_by_Category.cs" />
+    <Compile Include="NORTHWND\Sales_Totals_by_Amount.cs" />
+    <Compile Include="NORTHWND\Shipper.cs" />
+    <Compile Include="NORTHWND\Summary_of_Sales_by_Quarter.cs" />
+    <Compile Include="NORTHWND\Summary_of_Sales_by_Year.cs" />
+    <Compile Include="NORTHWND\Supplier.cs" />
+    <Compile Include="NORTHWND\Territory.cs" />
+    <Compile Include="Osoba.cs" />
+    <Compile Include="Pc.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Pracownik.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TPHContext.cs" />
+    <Compile Include="TPTContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
