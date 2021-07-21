@@ -14,7 +14,7 @@ namespace Lab._4
     {
         public static void Main(string[] args)
         {
-            var tph = new TPHContext();
+            /*var tph = new TPHContext();
             tph.Osobas.Add(new Klient() {Imie = "Dominik", Nazwisko = "Katana", NrRejestracyjny = "SZY9V84", NrTelefonu = "765900300"});
             tph.Osobas.Add(new Pracownik() {Imie = "Paweł", Nazwisko = "Kowalski", DataZatrudnienia = DateTime.Now, DataZwolnienia = null});
             tph.SaveChanges();
@@ -22,7 +22,12 @@ namespace Lab._4
             var tpt = new TPTContext();
             tpt.Osobas.Add(new Klient() {Imie = "Dominik", Nazwisko = "Katana", NrRejestracyjny = "SZY9V84", NrTelefonu = "765900300"});
             tpt.Osobas.Add(new Pracownik() {Imie = "Paweł", Nazwisko = "Kowalski", DataZatrudnienia = DateTime.Now, DataZwolnienia = null});
-            tpt.SaveChanges();
+            tpt.SaveChanges();*/
+            
+            var tpc = new TPCContext();
+            tpc.Computers.Add(new Pc() {Id = 1, Price = 1000, CollingType = "Air"});
+            tpc.Computers.Add(new Laptop() {Id = 2, Price = 1000, Weight = 4.5});
+            tpc.SaveChanges();
             
             Console.Read();
         }
